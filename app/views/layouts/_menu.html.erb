@@ -8,9 +8,15 @@
         <%= image_tag 'easyemploi-removebg-preview.png', :height => "110" %>
       </a>
     </div>
+    <% if user_signed_in? %>
+
+    <% else %>
+
+
     <div class="buy-button">
-      <a href="https://1.envato.market/4n73n" target="_blank" class="btn btn-primary">Buy Now</a>
+      <%= link_to 'Espace client', new_user_session_path, :class => "btn btn-primary" %>
     </div><!--end login button-->
+    <% end %>
     <!-- End Logo container-->
     <div class="menu-extras">
       <div class="menu-item">
