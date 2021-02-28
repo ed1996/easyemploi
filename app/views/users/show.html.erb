@@ -1,0 +1,265 @@
+<!-- Hero Start -->
+<section class="bg-profile d-table w-100 bg-primary2" style="background: url('/assets/account/bg.png') center center;">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="card public-profile border-0 rounded shadow" style="z-index: 1;">
+          <div class="card-body">
+            <div class="row align-items-center">
+              <div class="col-lg-2 col-md-3 text-md-left text-center">
+             <%#    <%= image_tag avatar_url(@user), :class => "avatar avatar-large rounded-circle shadow d-block mx-auto", :alt => "photo-profil" %>
+              </div><!--end col-->
+
+              <div class="col-lg-10 col-md-9">
+                <div class="row align-items-end">
+                  <div class="col-md-7 text-md-left text-center mt-4 mt-sm-0">
+                    <h3 class="title mb-0"><%= @user.fullname %></h3>
+                    <p><%= @user.email %></p>
+                    <p><%= @user.phone_number %></p>
+                    <!-- <ul class="list-inline mb-0 mt-3">
+                       <li class="list-inline-item mr-2"><a href="javascript:void(0)" class="text-muted" title="Instagram"><i data-feather="instagram" class="fea icon-sm mr-2"></i>krista_joseph</a></li>
+                       <li class="list-inline-item"><a href="javascript:void(0)" class="text-muted" title="Linkedin"><i data-feather="linkedin" class="fea icon-sm mr-2"></i>Krista Joseph</a></li>
+                     </ul>-->
+                  </div><!--end col-->
+                  <div class="col-md-5 text-md-right text-center">
+                    <% if current_user != @user %>
+                      <div class="row-space-2">
+                        <%= link_to "Envoyer un message", conversations_path(sender_id: current_user.id, recipient_id: @user.id), method: 'post', class:"btn btn-primary" %>
+                      </div>
+                    <% end %>
+                  </div>
+                </div><!--end row-->
+              </div><!--end col-->
+            </div><!--end row-->
+          </div>
+        </div>
+      </div><!--end col-->
+    </div><!--end row-->
+  </div><!--ed container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Profile Start -->
+<section class="section mt-60">
+  <div class="container mt-lg-3">
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-12 d-lg-block d-none">
+        <div class="sidebar sticky-bar p-4 rounded shadow">
+          <div class="widget">
+            <h5 class="widget-title">Entreprise(s) :</h5>
+            <div class="row mt-4">
+              <div class="col-12 text-center">
+                <i data-feather="user-plus" class="fea icon-ex-md text-primary mb-1"></i>
+                <h3 class="mb-0"><%# <%= @user.entreprises.count %></h3>
+                <!--<p class="text-muted mb-0">Followers</p>-->
+              </div><!--end col-->
+
+              <!--<div class="col-6 text-center">
+                <i data-feather="users" class="fea icon-ex-md text-primary mb-1"></i>
+                <h5 class="mb-0">454</h5>
+                <p class="text-muted mb-0">Following</p>
+              </div>end col-->
+            </div><!--end row-->
+          </div>
+
+          <!-- <div class="widget mt-4 pt-2">
+             <h5 class="widget-title">Projects :</h5>
+             <div class="progress-box mt-4">
+               <h6 class="title text-muted">Progress</h6>
+               <div class="progress">
+                 <div class="progress-bar position-relative bg-primary" style="width:50%;">
+                   <div class="progress-value d-block text-muted h6">24 / 48</div>
+                 </div>
+               </div>
+             </div>
+           </div>-->
+
+          <div class="widget">
+            <div class="row">
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to user_path(current_user.id), class: "accounts rounded d-block shadow text-center py-3" do %>
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-dashboard"></i></span>
+                  <h6 class="title text-dark h6 my-0">Profile</h6>
+                <% end %>
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+             <%#    <%= link_to new_subscriber_path, class: "accounts rounded d-block shadow text-center py-3" do
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-users-alt"></i></span>
+                  <h6 class="title text-dark h6 my-0">Abonnement</h6>
+
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to entreprises_path, class: "accounts rounded d-block shadow text-center py-3" do
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-file"></i></span>
+                  <h6 class="title text-dark h6 my-0">Entreprise(s)</h6>
+
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to conversations_path, class: "accounts rounded d-block shadow text-center py-3" do
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-envelope-star"></i></span>
+                  <h6 class="title text-dark h6 my-0"> Messages</h6>
+
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to vos_rendez_vous_path, class: "accounts rounded d-block shadow text-center py-3" do
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
+                  <h6 class="title text-dark h6 my-0">Rendez-vous</h6>
+
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to vos_reservations_path, class: "accounts rounded d-block shadow text-center py-3" do
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-transaction"></i></span>
+                  <h6 class="title text-dark h6 my-0">Réservation-vous(s)</h6>
+                <% end %>
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to edit_user_registration_path, class: "accounts rounded d-block shadow text-center py-3" do %>
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-setting"></i></span>
+                  <h6 class="title text-dark h6 my-0">Modifier profil</h6>
+                <% end %>
+              </div><!--end col-->
+
+              <div class="col-6 mt-4 pt-2">
+                <%= link_to destroy_user_session_path, method: :delete, class: "accounts rounded d-block shadow text-center py-3" do %>
+                  <span class="pro-icons h3 text-muted"><i class="uil uil-sign-out-alt"></i></span>
+                  <h6 class="title text-dark h6 my-0">Deconnexion</h6>
+                <% end %>
+              </div><!--end col-->
+            </div><!--end row-->
+          </div>
+
+          <!-- <div class="widget mt-4 pt-2">
+             <h5 class="widget-title">Follow me :</h5>
+             <ul class="list-unstyled social-icon mb-0 mt-4">
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="facebook" class="fea icon-sm fea-social"></i></a></li>
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="instagram" class="fea icon-sm fea-social"></i></a></li>
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="twitter" class="fea icon-sm fea-social"></i></a></li>
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="linkedin" class="fea icon-sm fea-social"></i></a></li>
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="github" class="fea icon-sm fea-social"></i></a></li>
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="youtube" class="fea icon-sm fea-social"></i></a></li>
+               <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><i data-feather="gitlab" class="fea icon-sm fea-social"></i></a></li>
+             </ul>
+           </div>-->
+        </div>
+      </div><!--end col-->
+
+
+      <div class="col-lg-8 col-12">
+        <!--<div class="border-bottom pb-4">
+          <h5>Krista Joseph</h5>
+          <p class="text-muted mb-0">I have started my career as a trainee and prove my self and achieve all the milestone with good guidance and reach up to the project manager. In this journey, I understand all the procedure which make me a good developer, team leader, and a project manager.</p>
+        </div>-->
+
+        <div class="border-bottom pb-4">
+          <div class="row">
+            <div class="col-md-6 mt-4">
+              <h5>Informations personnelles :</h5>
+              <div class="mt-4">
+                <div class="media align-items-center">
+                  <i data-feather="mail" class="fea icon-ex-md text-muted mr-3"></i>
+                  <div class="media-body">
+                    <h6 class="text-primary mb-0">Nom complet :</h6>
+                    <a href="javascript:void(0)" class="text-muted"><%= @user.fullname %></a>
+                  </div>
+                </div>
+                <div class="media align-items-center">
+                  <i data-feather="mail" class="fea icon-ex-md text-muted mr-3"></i>
+                  <div class="media-body">
+                    <h6 class="text-primary mb-0">Email :</h6>
+                    <a href="javascript:void(0)" class="text-muted"><%= @user.email %></a>
+                  </div>
+                </div>
+                <div class="media align-items-center mt-3">
+                  <i data-feather="bookmark" class="fea icon-ex-md text-muted mr-3"></i>
+                  <div class="media-body">
+                    <h6 class="text-primary mb-0">Téléphone :</h6>
+                    <a href="javascript:void(0)" class="text-muted"><%= @user.phone_number %></a>
+                  </div>
+                </div>
+                <!--  <div class="media align-items-center mt-3">
+                    <i data-feather="italic" class="fea icon-ex-md text-muted mr-3"></i>
+                    <div class="media-body">
+                      <h6 class="text-primary mb-0">Language :</h6>
+                      <a href="javascript:void(0)" class="text-muted">English</a>, <a href="javascript:void(0)" class="text-muted">Japanese</a>, <a href="javascript:void(0)" class="text-muted">Chinese</a>
+                    </div>
+                  </div>
+                  <div class="media align-items-center mt-3">
+                    <i data-feather="globe" class="fea icon-ex-md text-muted mr-3"></i>
+                    <div class="media-body">
+                      <h6 class="text-primary mb-0">Website :</h6>
+                      <a href="javascript:void(0)" class="text-muted">www.kristajoseph.com</a>
+                    </div>
+                  </div>
+                  <div class="media align-items-center mt-3">
+                    <i data-feather="gift" class="fea icon-ex-md text-muted mr-3"></i>
+                    <div class="media-body">
+                      <h6 class="text-primary mb-0">Birthday :</h6>
+                      <p class="text-muted mb-0">2nd March, 1996</p>
+                    </div>
+                  </div>
+                  <div class="media align-items-center mt-3">
+                    <i data-feather="map-pin" class="fea icon-ex-md text-muted mr-3"></i>
+                    <div class="media-body">
+                      <h6 class="text-primary mb-0">Location :</h6>
+                      <a href="javascript:void(0)" class="text-muted">Beijing, China</a>
+                    </div>
+                  </div>
+                  <div class="media align-items-center mt-3">
+                    <i data-feather="phone" class="fea icon-ex-md text-muted mr-3"></i>
+                    <div class="media-body">
+                      <h6 class="text-primary mb-0">Cell No :</h6>
+                      <a href="javascript:void(0)" class="text-muted">(+12) 1254-56-4896</a>
+                    </div>
+                  </div>-->
+                <br><br>
+                <div class="panel panel-default">
+                  <div class="panel-heading">Vérification</div>
+                  <div class="panel-body">
+                <%#     <% if @user.confirmed_at
+                      Email confirmé
+                    <% else
+                      Email non confirmé
+                    <% end %>
+                  </div>
+                </div>
+              </div>
+            </div><!--end col-->
+
+            <div class="col-md-6 mt-4 pt-2 pt-sm-0">
+              <h5>Avi(s) :</h5>
+
+           <%#    <% @entreprises.each do |entreprise|
+                <% if !entreprise.reviews.blank?
+                  <% entreprise.reviews.each do |review|
+
+                    <div class="media key-feature align-items-center p-3 rounded shadow mt-4">
+                      <%= image_tag avatar_url(review.user), class:"avatar avatar-ex-sm"
+                      <div class="media-body content ml-3">
+                        <h4 class="title mb-0"><%= review.user.fullname  </h4>
+                        <p class="text-muted mb-0"><%= link_to entreprise.company_name, entreprise </p>
+                        <p class="text-muted mb-0"><%= review.comment  <%= review.created_at.strftime("(%d/%m/%y)") </p>
+                      </div>
+                    </div>
+
+                  <% end
+                <% end
+              <% end %>
+
+            </div><!--end col-->
+          </div><!--end row-->
+        </div>
+
+
+
+      </div><!--end row-->
+    </div><!--end col-->
+  </div><!--end row-->
+  </div><!--end container-->
+</section><!--end section-->
+<!-- Profile End -->

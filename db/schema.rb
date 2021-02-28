@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20210222200502) do
+ActiveRecord::Schema.define(version: 20210225221359) do
+
+  create_table "emplois", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "profession"
+    t.string "contrat"
+    t.integer "remuneration"
+    t.integer "age"
+    t.string "phone"
+    t.string "adresse"
+    t.string "ville"
+    t.string "transport"
+    t.string "email"
+    t.string "name"
+    t.string "niveau_anglais"
+    t.string "autre_langue"
+    t.text "description"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_emplois_on_user_id"
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "email", default: "", null: false
@@ -21,8 +41,13 @@ ActiveRecord::Schema.define(version: 20210222200502) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "fullname"
+    t.string "phone_number"
+    t.text "description"
+    t.boolean "subscribed"
+    t.string "stripeid"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "emplois", "users"
 end

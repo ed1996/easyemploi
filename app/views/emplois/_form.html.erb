@@ -1,0 +1,146 @@
+<!-- Hero Start -->
+<section class="bg-half bg-light d-table w-100">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-12 text-center">
+        <div class="page-next-level">
+          <h4 class="title"> On vous trouve votre emploi </h4>
+          <div class="page-next">
+            <nav aria-label="breadcrumb" class="d-inline-block">
+              <ul class="breadcrumb bg-white rounded shadow mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Landrick</a></li>
+                <li class="breadcrumb-item"><a href="#">Page</a></li>
+                <li class="breadcrumb-item"><a href="#">Careers</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Job Apply</li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>  <!--end col-->
+    </div><!--end row-->
+  </div> <!--end container-->
+</section><!--end section-->
+<!-- Hero End -->
+
+<!-- Shape Start -->
+<div class="position-relative">
+  <div class="shape overflow-hidden text-white">
+    <svg viewBox="0 0 2880 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 48H1437.5H2880V0H2160C1442.5 52 720 0 720 0H0V48Z" fill="currentColor"></path>
+    </svg>
+  </div>
+</div>
+<!--Shape End-->
+
+<!-- Job apply form Start -->
+<section class="section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 col-md-7">
+        <div class="card custom-form border-0">
+          <div class="card-body">
+              <%= form_for @emploi, class:"rounded shadow p-4", html: {multipart: true} do |f| %>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Votre nom complet :<span class="text-danger">*</span></label>
+                    <%= f.text_field :name, placeholder:"Nom complet", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Votre mail :<span class="text-danger">*</span></label>
+                    <i data-feather="mail" class="fea icon-sm icons"></i>
+                    <%= f.text_field :email, placeholder:"Votre mail", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Votre numéro :<span class="text-danger">*</span></label>
+                    <i data-feather="phone" class="fea icon-sm icons"></i>
+                    <%= f.text_field :phone, placeholder:"Numéro de téléphone", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Titre de la profession :<span class="text-danger">*</span></label>
+                    <i data-feather="book" class="fea icon-sm icons"></i>
+                    <%= f.text_field :profession, placeholder:"Titre de la profession", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label>Type d'emploi :</label>
+                    <%= f.select :contrat, [["CDI","CDI"],["CDD","CDD"],["Alternance","Alternance"],["Stage","Stage"]], id: "contrat", prompt:"A sélectionner...", class:"form-control custom-select" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Moyen de transport :</label>
+                    <i data-feather="book" class="fea icon-sm icons"></i>
+                    <%= f.text_field :transport, placeholder:"Votre moyen de transport", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-12">
+                  <div class="form-group position-relative">
+                    <label>Description :</label>
+                    <i data-feather="message-circle" class="fea icon-sm icons"></i>
+                    <%= f.text_area :description, placeholder:"description de l'emploi souhaité", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Votre rémunération souhaitée :<span class="text-danger">*</span></label>
+                    <i data-feather="phone" class="fea icon-sm icons"></i>
+                    <%= f.text_field :remuneration, placeholder:"Rémunération souhaitée", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Votre âge :</label>
+                    <i data-feather="book" class="fea icon-sm icons"></i>
+                    <%= f.text_field :age, placeholder:"Votre âge", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Niveau d'anglais :</label>
+                    <i data-feather="phone" class="fea icon-sm icons"></i>
+                    <%= f.text_field :niveau_anglais, placeholder:"Niveau anglais", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-6">
+                  <div class="form-group position-relative">
+                    <label>Autre(s) langue(s) :</label>
+                    <i data-feather="book" class="fea icon-sm icons"></i>
+                    <%= f.text_field :autre_langue, placeholder:"Autre(s) langue(s)", class:"form-control pl-5" %>
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-12">
+                  <div class="form-group position-relative">
+                    <label>Upload Your Cv / Resume :</label>
+                    <input type="file" class="form-control-file" id="fileupload">
+                  </div>
+                </div><!--end col-->
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="customCheck1">
+                      <label class="custom-control-label" for="customCheck1">I Accept <a href="#" class="text-primary">Terms And Condition</a></label>
+                    </div>
+                  </div>
+                </div><!--end col-->
+              </div><!--end row-->
+              <div class="row">
+                <div class="col-sm-12">
+                  <%= f.submit "Je valide", class:"submitBnt btn btn-primary" %>
+                </div><!--end col-->
+              </div><!--end row-->
+                <% end %>
+          </div>
+        </div><!--end custom-form-->
+      </div>
+    </div>
+  </div><!--end container-->
+</section><!--end section-->
+<!-- Job apply form End -->
