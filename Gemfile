@@ -39,6 +39,7 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'stripe'
 gem 'toastr-rails'
+gem 'sendgrid-actionmailer'
 
 
 
