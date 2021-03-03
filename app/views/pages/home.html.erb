@@ -40,7 +40,7 @@
       <div class="col-md-4 col-12">
         <div class="features mt-5">
           <div class="image position-relative d-inline-block">
-            <img src="images/icon/pen.svg" class="avatar avatar-small"  alt="">
+            <%= image_tag 'pen.svg', :class => "avatar avatar-small" %>
           </div>
 
           <div class="content mt-4">
@@ -54,7 +54,7 @@
       <div class="col-md-4 col-12 mt-5">
         <div class="features">
           <div class="image position-relative d-inline-block">
-            <img src="images/icon/video.svg" class="avatar avatar-small"  alt="">
+            <%= image_tag 'video.svg', :class => "avatar avatar-small" %>
           </div>
 
           <div class="content mt-4">
@@ -67,7 +67,7 @@
       <div class="col-md-4 col-12 mt-5">
         <div class="features">
           <div class="image position-relative d-inline-block">
-            <img src="images/icon/intellectual.svg" class="avatar avatar-small"  alt="">
+            <%= image_tag 'intellectual.svg', :class => "avatar avatar-small" %>
           </div>
 
           <div class="content mt-4">
@@ -80,7 +80,7 @@
       <div class="col-md-4 col-12 mt-5">
         <div class="features">
           <div class="image position-relative d-inline-block">
-            <img src="images/icon/user.svg" class="avatar avatar-small"  alt="">
+            <%= image_tag 'user.svg', :class => "avatar avatar-small" %>
           </div>
 
           <div class="content mt-4">
@@ -93,7 +93,7 @@
       <div class="col-md-4 col-12 mt-5">
         <div class="features">
           <div class="image position-relative d-inline-block">
-            <img src="images/icon/calendar.svg" class="avatar avatar-small"  alt="">
+            <%= image_tag 'calendar.svg', :class => "avatar avatar-small" %>
           </div>
 
           <div class="content mt-4">
@@ -106,7 +106,7 @@
       <div class="col-md-4 col-12 mt-5">
         <div class="features">
           <div class="image position-relative d-inline-block">
-            <img src="images/icon/sand-clock.svg" class="avatar avatar-small"  alt="">
+            <%= image_tag 'sand-clock.svg', :class => "avatar avatar-small" %>
           </div>
 
           <div class="content mt-4">
@@ -127,8 +127,8 @@
     <div class="row justify-content-center">
       <div class="col-12 text-center">
         <div class="section-title mb-4 pb-2">
-          <h4 class="title mb-4">Choose Simple Pricing</h4>
-          <p class="text-muted para-desc mb-0 mx-auto">Start working with <span class="text-primary font-weight-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
+          <h4 class="title mb-4">Une offre simple</h4>
+          <p class="text-muted para-desc mb-0 mx-auto">Démarrer maintenant avec <span class="text-primary font-weight-bold">Easyemploi</span> et obtenez votre emploi rapidement sans aucunes démarches de votre part, on s'occupe de tout.</p>
         </div>
       </div><!--end col-->
     </div><!--end row-->
@@ -158,7 +158,7 @@
       <div class="col-md-4 col-12 mt-4 pt-2">
         <div class="card pricing-rates business-rate shadow bg-light rounded text-center border-0">
           <div class="card-body py-5">
-            <h2 class="title text-uppercase text-primary mb-4">Starter</h2>
+            <h2 class="title text-uppercase text-primary mb-4">Recherche d'emplois</h2>
             <div class="d-flex justify-content-center mb-4">
               <span class="h4 mb-0 mt-2">€</span>
               <span class="price h1 mb-0">4,99</span>
@@ -166,13 +166,13 @@
             </div>
 
             <ul class="list-unstyled mb-0 pl-0">
-              <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Full Access</li>
-              <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Source Files</li>
+              <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Easyemploi s'occupe de tout</li>
+              <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Offres d'emplois cachés</li>
               <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Free Appointments</li>
               <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Free Installment</li>
               <li class="h6 text-muted mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Enhanced Security</li>
             </ul>
-            <a href="javascript:void(0)" class="btn btn-primary mt-4">Get Started</a>
+            <%= link_to 'Démarrer', new_subscriber_path, :class => "btn btn-primary mt-4" %>
           </div>
         </div>
       </div><!--end col-->
@@ -206,7 +206,7 @@
     <div class="row align-items-center">
       <div class="col-lg-6">
         <div class="section-title">
-          <h4 class="title mb-4">See everything about your <span class="text-primary">Landrick</span> Business</h4>
+          <h4 class="title mb-4">les statistiques de <span class="text-primary">Easyemploi</span></h4>
           <p class="text-muted para-desc">Start working with <span class="text-primary font-weight-bold">Landrick</span> that can provide everything you need to generate awareness, drive traffic, connect.</p>
           <ul class="list-unstyled text-muted">
             <li class="mb-0"><span class="text-primary h5 mr-2"><i class="uim uim-check-circle"></i></span>Digital Marketing Solutions for Tomorrow</li>
@@ -223,8 +223,8 @@
               <div class="col-12 mt-4 mt-lg-0 pt-2 pt-lg-0">
                 <div class="card counter-box border-0 bg-light shadow text-center rounded">
                   <div class="card-body py-5">
-                    <h2 class="mb-0"><span class="counter-value" data-count="97">3</span>%</h2>
-                    <h5 class="counter-head mb-0">Happy Client</h5>
+                    <h2 class="mb-0"><span class="counter-value" data-count="97">194</span></h2>
+                    <h5 class="counter-head mb-0">Emplois trouvés</h5>
                   </div>
                 </div>
               </div><!--end col-->

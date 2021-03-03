@@ -38,6 +38,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 gem 'devise-i18n'
 gem 'stripe'
+gem 'toastr-rails'
 
 
 
