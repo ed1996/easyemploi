@@ -8,10 +8,8 @@
           <div class="page-next">
             <nav aria-label="breadcrumb" class="d-inline-block">
               <ul class="breadcrumb bg-white rounded shadow mb-0">
-                <li class="breadcrumb-item"><a href="index.html">Landrick</a></li>
-                <li class="breadcrumb-item"><a href="#">Page</a></li>
-                <li class="breadcrumb-item"><a href="#">Utility</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Privacy</li>
+                <li class="breadcrumb-item"><%= link_to 'Accueil', root_path %></li>
+                <li class="breadcrumb-item active" aria-current="page"><%= link_to 'Profil', edit_user_registration_path %></li>
               </ul>
             </nav>
           </div>
@@ -56,7 +54,7 @@
           </div>
 
           <div class="form-group">
-            <%= f.text_field :phone_number, autofocus: true, autocomplete: "télépgone", class: "form-control", placeholder: "Téléphone" %>
+            <%= f.text_field :phone_number, autofocus: true, autocomplete: "téléphone", class: "form-control", placeholder: "Téléphone" %>
           </div>
 
 
@@ -66,6 +64,10 @@
 
           <div class="form-group">
             <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: "Confirmation du mot de passe" %>
+          </div>
+
+          <div class="form-group">
+            <%= f.password_field :current_password, autocomplete: "new-password", class: "form-control", placeholder: "Mot de passe actuel (si vous souhaitez faire des modifications)" %>
           </div>
 
           <div class="actions">
